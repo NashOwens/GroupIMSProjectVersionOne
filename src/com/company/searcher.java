@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -10,7 +9,7 @@ import static com.company.Main.userLoggedInUserName;
 
 public class searcher {
     public static void search(String fileName,int userLevel,boolean stockChange,boolean personalChange){
-        String titleCheck = null;
+        String titleCheck;
         List<List<String>> searchList = reader.reader(fileName);                            //To search through our records, we must first read them.
         if(!personalChange) {
             System.out.println("Search for what record ?");                                 //Asking the user which title they want to find.
@@ -66,10 +65,12 @@ public class searcher {
         int menuChoice;
 
         System.out.println(
-                "**** Menu ****\n" +
-                        "1. Edit record\n"+
-                        "2. Delete record\n" +
-                        "3. Exit to Main Menu\n"
+                """
+                        **** Menu ****
+                        1. Edit record
+                        2. Delete record
+                        3. Exit to Main Menu
+                        """
         );
         menuChoice = menuDecider.menuDecide(3);                                          //Call the menu function with parameter of maximum options, in this case 3
 

@@ -21,13 +21,13 @@ public class userAccess {
         String userPassword=scanIn.nextLine();
 
         String accessLevel;
-        for(int i=0;i<accessCodes.size();i++){
-            if(accessCodes.get(i).get(1).equals(userName)){
-                if(accessCodes.get(i).get(2).equals(userPassword)) {
-                    Main.userLoggedInName=accessCodes.get(i).get(3);
+        for (List<String> accessCode : accessCodes) {
+            if (accessCode.get(1).equals(userName)) {
+                if (accessCode.get(2).equals(userPassword)) {
+                    Main.userLoggedInName = accessCode.get(3);
                     System.out.println("Login Successful. Welcome " + Main.userLoggedInName);
-                    Main.userLoggedInUserName=accessCodes.get(i).get(1);
-                    accessLevel = accessCodes.get(i).get(4);
+                    Main.userLoggedInUserName = accessCode.get(1);
+                    accessLevel = accessCode.get(4);
                     if (accessLevel.equals("admin")) {
                         return 1;
                     } else {                //Returns the corresponding user level
